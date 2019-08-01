@@ -1,2 +1,6 @@
 ---
 # vars file for dsvpn
+dsvpn_requirements:
+  - kmod
+
+dsvpn_release_url: "https://github.com/jedisct1/dsvpn/archive/{{ dsvpn_version }}.tar.gz"
