@@ -1,0 +1,66 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: requirements.yml
+lint:
+  name: yamllint
+driver:
+  name: docker
+platforms:
+  - name: dsvpn-alpine-edge
+    image: alpine:edge
+    pre_build_image: yes
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: dsvpn-alpine-latest
+    image: alpine:latest
+    pre_build_image: yes
+    command: sh -c "while true ; do sleep 1 ; done"
+  - name: dsvpn-archlinux
+    image: archlinux/base
+    pre_build_image: yes
+  - name: dsvpn-centos-6
+    image: centos:6
+    pre_build_image: yes
+  - name: dsvpn-centos-latest
+    image: centos:latest
+    pre_build_image: yes
+  - name: dsvpn-debian-stable
+    image: debian:stable
+    pre_build_image: yes
+  - name: dsvpn-debian-unstable
+    image: debian:unstable
+    pre_build_image: yes
+  - name: dsvpn-fedora-latest
+    image: fedora:latest
+    pre_build_image: yes
+  - name: dsvpn-fedora-rawhide
+    image: fedora:rawhide
+    pre_build_image: yes
+  - name: dsvpn-opensuse-leap
+    image: opensuse/leap
+    pre_build_image: yes
+  - name: dsvpn-ubuntu-latest
+    image: ubuntu:latest
+    pre_build_image: yes
+  - name: dsvpn-ubuntu-rolling
+    image: ubuntu:rolling
+    pre_build_image: yes
+  - name: dsvpn-ubuntu-devel
+    image: ubuntu:devel
+    pre_build_image: yes
+provisioner:
+  name: ansible
+  playbooks:
+    prepare: ../resources/prepare.yml
+    converge: ../resources/playbook.yml
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      dsvpn-fedora-latest:
+        ansible_python_interpreter: /usr/bin/python3
+      dsvpn-fedora-rawhide:
+        ansible_python_interpreter: /usr/bin/python3
+scenario:
+  name: default

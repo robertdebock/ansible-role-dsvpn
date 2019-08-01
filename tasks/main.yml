@@ -1,0 +1,53 @@
+---
+# tasks file for dsvpn
+- name: unarchive
+  unarchive:
+    src: "https://github.com/jedisct1/dsvpn/archive/0.1.0.tar.gz"
+    dest: /tmp
+    remote_src: yes
+
+- name: make
+  make:
+    chdir: /tmp/dsvpn-0.1.0
+
+- name: generate key
+  command: dd if=/dev/urandom of=/tmp/vpn.key count=1 bs=32
+  args:
+    creates: /tmp/vpn.key
+  delegate_to: localhost
+
+- name: copy key
+  copy:
+    src: /tmp/vpn.key
+    dest: /tmp/vpn.key
+
+- name: load tun module
+  modprobe:
+    name: tun
+    state: present
+
+- name: create /dev/net directory
+  file:
+    path: /dev/net
+    state: directory
+
+- name: create character device /dev/net/tun
+  command: mknod /dev/net/tun c 10 200
+  args:
+    creates: /dev/net/tun
+
+- name: start server
+  command: ./dsvpn server /tmp/vpn.key
+  args:
+    creates: nothing
+    chdir: /tmp/dsvpn-0.1.0
+  when:
+    - ansible_virtualization_type != "docker"
+
+- name: start client
+  command: ./dsvpn client /tmp/vpn.key 34.216.127.34
+  args:
+    creates: nothing
+    chdir: /tmp/dsvpn-0.1.0
+  when:
+    - ansible_virtualization_type != "docker"

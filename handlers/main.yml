@@ -1,0 +1,8 @@
+---
+# handlers file for dsvpn
+- name: restart dsvpn
+  service:
+    name: "{{ dsvpn_service }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
