@@ -19,7 +19,7 @@
 
 - name: make
   make:
-    chdir: "{{dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
+    chdir: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
 
 - name: generate key
   command: dd if=/dev/urandom of={{ dsvpn_key_directory }} /vpn.key count=1 bs=32
