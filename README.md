@@ -43,6 +43,12 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for dsvpn
+
+dsvpn_version: 0.1.0
+
+dsvpn_temporary_directory: /tmp
+
+dsvpn_key_directory: /tmp
 ```
 
 Requirements
