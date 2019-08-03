@@ -6,6 +6,6 @@ _dsvpn_requirements:
   CentOS-6:
     - module-init-tools
 
-dsvpn_requirements: "{{ _dsvpn_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_dsvpn_requirements[ansible_distribution] | default(_dsvpn_requirements['default'])) }}'
+dsvpn_requirements: "{{ _dsvpn_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_dsvpn_requirements[ansible_distribution] | default(_dsvpn_requirements['default'])) }}"
 
 dsvpn_release_url: "https://github.com/jedisct1/dsvpn/archive/{{ dsvpn_version }}.tar.gz"
