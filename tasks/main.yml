@@ -36,6 +36,8 @@
   modprobe:
     name: tun
     state: present
+  when:
+    - ansible_virtualization_type != "docker"
 
 - name: create /dev/net directory
   file:
@@ -54,11 +56,13 @@
     chdir: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
   when:
     - ansible_virtualization_type != "docker"
+    - dsvpn_role: server
 
 - name: start client
-  command: ./dsvpn client /tmp/vpn.key 34.216.127.34
+  command: ./dsvpn client /tmp/vpn.key "{{ dsvpn_server }}"
   args:
     creates: nothing
     chdir: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
   when:
     - ansible_virtualization_type != "docker"
+    - dsvpn_role: client
