@@ -44,13 +44,20 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for dsvpn
 
+# The released version to download. See https://github.com/jedisct1/dsvpn/releases.
 dsvpn_version: 0.1.0
 
+# Where to download dsvpn to.
 dsvpn_temporary_directory: /tmp
 
+# Where to generate the keys. This is a sensitive file.
 dsvpn_key_directory: /tmp
 
+# The role to let dsvpn take, can be `client` or `server`.
 dsvpn_role: client
+
+# When the role `client` is selected, this is the address of the server
+# to connect to. Can be an address or a (resolvable) name.
 dsvpn_server: 127.0.0.1
 ```
 
