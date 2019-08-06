@@ -10,9 +10,13 @@ driver:
   provider:
     name: virtualbox
 platforms:
-  - name: dsvpn-debian
+  - name: dsvpn-debian-client
     box: debian/stretch64
-  - name: dsvpn-fedora
+  - name: dsvpn-debian-server
+    box: debian/stretch64
+  - name: dsvpn-fedora-client
+    box: fedora/30-cloud-base
+  - name: dsvpn-fedora-server
     box: fedora/30-cloud-base
 provisioner:
   name: ansible
@@ -23,7 +27,17 @@ provisioner:
     name: ansible-lint
   inventory:
     host_vars:
-      dsvpn-fedora:
+      dsvpn-fedora-client:
         ansible_python_interpreter: /usr/bin/python3
+        dsvpn_role: client
+        dsvpn_server: hostvars[dsvpn-fedora-server]['ansible_default_ipv4']['address']
+      dsvpn-fedora-server:
+        ansible_python_interpreter: /usr/bin/python3
+        dsvpn_role: server
+      dsvpn-debian-client:
+        dsvpn_server: hostvars[dsvpn-debian-server]['ansible_default_ipv4']['address']
+        dsvpn_role: server
+      dsvpn-debian-server:
+        dsvpn_role: server
 scenario:
   name: vagrant
