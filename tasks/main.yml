@@ -61,7 +61,7 @@
         description: "Dead simple VPN server"
         start_command: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}/dsvpn server {{ dsvpn_key_directory }}/vpn.key"
   when:
-    - dsvpn_role: server
+    - dsvpn_role == "server"
   notify:
     - systemctl daemon-reload
     - restart dsvpn server
@@ -75,7 +75,7 @@
         description: "Dead simple VPN client"
         start_command: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}/dsvpn client {{ dsvpn_key_directory }}/vpn.key {{ dsvpn_server }}"
   when:
-    - dsvpn_role: client
+    - dsvpn_role == "client"
   notify:
     - systemctl daemon-reload
     - restart dsvpn client
