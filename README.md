@@ -73,6 +73,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ---
 - robertdebock.bootstrap
 - robertdebock.buildtools
+- robertdebock.service
 
 ```
 
