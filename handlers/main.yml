@@ -1,8 +1,22 @@
 ---
 # handlers file for dsvpn
-- name: restart dsvpn
+- name: restart dsvpn server
   service:
-    name: "{{ dsvpn_service }}"
+    name: "dsvpn server"
     state: restarted
   when:
     - ansible_virtualization_type != "docker"
+
+- name: restart dsvpn client
+  service:
+    name: "dsvpn client"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+  when:
+    - ansible_virtualization_type != "docker"
+
