@@ -10,7 +10,7 @@
   notify:
     - restart dsvpn-server
 
-- name: start server service
+- name: start dsvpn-server
   service:
     name: dsvpn-server
     state: started
