@@ -1,0 +1,19 @@
+---
+- name: create client service
+  import_role:
+    name: robertdebock.service
+  vars:
+    service_list:
+      - name: "dsvpn-client"
+        description: "Dead simple VPN client"
+        start_command: "{{ dsvpn_install_directory }}/dsvpn client {{ dsvpn_key_directory }}/vpn.key {{ dsvpn_server }}"
+  notify:
+    - restart dsvpn client
+
+- name: start client service
+  service:
+    name: dsvpn-client
+    state: started
+    enabled: yes
+  when:
+    - ansible_virtualization_type != "docker"
