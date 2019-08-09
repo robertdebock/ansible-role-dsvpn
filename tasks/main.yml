@@ -39,8 +39,8 @@
     src: "{{ dsvpn_key_directory }}/vpn.key"
     dest: "{{ dsvpn_key_directory }}/vpn.key"
   notify:
-    - restart dsvpn server
-    - restart dsvpn client
+    - restart dsvpn-server
+    - restart dsvpn-client
 
 - name: load tun module
   modprobe:
