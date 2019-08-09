@@ -18,7 +18,8 @@ This example is taken from `molecule/resources/playbook.yml`:
   gather_facts: yes
 
   roles:
-    - robertdebock.dsvpn
+    - role: robertdebock.dsvpn
+      dsvpn_server: "{{ hostvars[dsvpn-fedora-server]['ansible_default_ipv4']['address'] }}"
 ```
 
 The machine you are running this on, may need to be prepared.
@@ -49,6 +50,9 @@ dsvpn_version: 0.1.0
 
 # Where to download dsvpn to.
 dsvpn_temporary_directory: /tmp
+
+# Where to install dsvpn.
+dsvpn_install_directory: /usr/local/bin
 
 # Where to generate the keys. This is a sensitive file.
 dsvpn_key_directory: /tmp
