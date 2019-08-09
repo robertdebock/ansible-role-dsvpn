@@ -8,7 +8,7 @@
         description: "Dead simple VPN client"
         start_command: "{{ dsvpn_install_directory }}/dsvpn client {{ dsvpn_key_directory }}/vpn.key {{ dsvpn_server }}"
   notify:
-    - restart dsvpn client
+    - restart dsvpn-client
 
 - name: start client service
   service:
