@@ -6,4 +6,4 @@
 
   roles:
     - role: ansible-role-dsvpn
-      dsvpn_server: "{{ hostvars['dsvpn-fedora-server']['ansible_default_ipv4']['address'] | default(omit) }}"
+      dsvpn_server: "{{ hostvars['dsvpn-fedora-server']['ansible_default_ipv4']['address'] | default('127.0.0.1') }}"
