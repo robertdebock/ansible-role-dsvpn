@@ -20,7 +20,7 @@ provisioner:
   name: ansible
   playbooks:
     prepare: ../resources/prepare.yml
-    converge: ../resources/playbook.yml
+    converge: ../resources/playbook-dynamic.yml
   lint:
     name: ansible-lint
   inventory:

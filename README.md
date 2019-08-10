@@ -19,7 +19,6 @@ This example is taken from `molecule/resources/playbook.yml`:
 
   roles:
     - role: robertdebock.dsvpn
-      dsvpn_server: "{{ hostvars['dsvpn-fedora-server']['ansible_default_ipv4']['address'] | default('127.0.0.1') }}"
 ```
 
 The machine you are running this on, may need to be prepared.
