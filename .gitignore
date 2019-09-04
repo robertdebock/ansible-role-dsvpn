@@ -1,3 +1,4 @@
 molecule/*/.molecule
 *.log
 *.swp
+vpn.key
