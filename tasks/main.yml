@@ -34,10 +34,19 @@
     creates: "{{ dsvpn_key_directory }}/vpn.key"
   delegate_to: localhost
 
+- name: set permissions on key
+  file:
+    path: "{{ dsvpn_key_directory }}/vpn.key"
+    mode: "0644"
+  delegate_to: localhost
+
 - name: copy key
   copy:
     src: "{{ dsvpn_key_directory }}/vpn.key"
     dest: "{{ dsvpn_key_directory }}/vpn.key"
+    mode: "0640"
+    owner: root
+    group: root
   notify:
     - restart dsvpn-server
     - restart dsvpn-client
