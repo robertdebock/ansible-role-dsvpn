@@ -21,12 +21,6 @@ provisioner:
   playbooks:
     prepare: ../resources/prepare.yml
     converge: ../resources/playbook-dynamic.yml
-  lint:
-    name: ansible-lint
-    options:
-      exclude:
-        - meta/version.yml
-        - meta/exception.yml
   inventory:
     host_vars:
       dsvpn-fedora-client:
