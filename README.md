@@ -1,7 +1,7 @@
 dsvpn
 =========
 
-<img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
+<img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/><img src="https://raw.githubusercontent.com/robertdebock/ansible-role-dsvpn/master/meta/logo.png" alt="Project logo" width="40" height="40" align="left"/>
 <a href="https://travis-ci.org/robertdebock/ansible-role-dsvpn"><img src="https://travis-ci.org/robertdebock/ansible-role-dsvpn.svg?branch=master" alt="Build status" align="left"/></a>
 
 Install and configure dsvpn on your system.
@@ -80,6 +80,21 @@ The following roles can be installed to ensure all requirements are met, using `
 
 ```
 
+This role uses the following modules:
+```yaml
+---
+- command
+- copy
+- file
+- import_role
+- include_tasks
+- make
+- modprobe
+- package
+- service
+- unarchive
+```
+
 Context
 -------
 
@@ -111,6 +126,9 @@ This role has been tested against the following distributions and Ansible versio
 |ubuntu-rolling|yes|yes|yes*|
 
 A single star means the build may fail, it's marked as an experimental build.
+
+
+
 
 Testing
 -------

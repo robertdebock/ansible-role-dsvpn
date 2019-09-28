@@ -31,5 +31,9 @@ provisioner:
         dsvpn_role: server
       dsvpn-debian-client:
         dsvpn_role: client
+  config_options:
+    defaults:
+      stdout_callback: yaml
+      bin_ansible_callbacks: true
 scenario:
   name: vagrant
