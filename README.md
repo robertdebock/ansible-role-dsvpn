@@ -34,6 +34,7 @@ The machine you are running this on, may need to be prepared.
 
   roles:
     - robertdebock.bootstrap
+    - robertdebock.core_dependencies
     - robertdebock.buildtools
 ```
 
@@ -78,6 +79,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.core_dependencies
 - robertdebock.buildtools
 - robertdebock.service
 
@@ -117,7 +119,7 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge*|yes|yes|yes*|
 |alpine-latest|yes|yes|yes*|
 |archlinux|yes|yes|yes*|
-|centos-7|no|no|no*|
+|centos-7|yes|yes|yes*|
 |centos-latest|yes|yes|yes*|
 |debian-stable|yes|yes|yes*|
 |debian-unstable*|yes|yes|yes*|
