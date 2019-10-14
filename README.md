@@ -6,8 +6,8 @@ dsvpn
 
 Install and configure dsvpn on your system.
 
-<img src="https://img.shields.io/ansible/role/d/"/>
-<img src="https://img.shields.io/ansible/quality/"/>
+<img src="https://img.shields.io/ansible/role/d/42441"/>
+<img src="https://img.shields.io/ansible/quality/42441"/>
 
 Example Playbook
 ----------------
