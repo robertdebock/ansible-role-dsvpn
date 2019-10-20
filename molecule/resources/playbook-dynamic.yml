@@ -1,9 +1,0 @@
----
-- name: Converge
-  hosts: all
-  become: yes
-  gather_facts: yes
-
-  roles:
-    - role: ansible-role-dsvpn
-      dsvpn_server: "{{ hostvars['dsvpn-fedora-server']['ansible_default_ipv4']['address'] }}"
