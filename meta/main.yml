@@ -24,9 +24,6 @@ galaxy_info:
     - name: Fedora
       versions:
         - all
-    - name: OpenSUSE
-      versions:
-        - all
     - name: Ubuntu
       versions:
         - artful
@@ -34,14 +31,5 @@ galaxy_info:
 
   galaxy_tags:
     - dsvpn
-    - alpine
-    - archlinux
-    - centos
-    - debian
-    - el
-    - fedora
-    - opensuse
-    - rhel
-    - ubuntu
 
 dependencies: []

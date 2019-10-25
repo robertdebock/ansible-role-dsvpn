@@ -127,7 +127,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 |docker-redhat-systemd|latest|no|
 |docker-fedora-systemd|latest|no|
 |docker-fedora-systemd|rawhide|yes|
-|docker-opensuse-systemd|latest|no|
 |docker-ubuntu-systemd|rolling|yes|
 |docker-ubuntu-systemd|devel|yes|
 |docker-ubuntu-systemd|latest|no|

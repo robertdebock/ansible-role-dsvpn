@@ -21,7 +21,6 @@ env:
     - image="docker-redhat-systemd"
     - image="docker-fedora-systemd"
     - image="docker-fedora-systemd" tag="rawhide"
-    - image="docker-opensuse-systemd"
     - image="docker-ubuntu-systemd" tag="rolling"
     - image="docker-ubuntu-systemd" tag="devel"
     - image="docker-ubuntu-systemd"
