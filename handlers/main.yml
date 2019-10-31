@@ -4,12 +4,8 @@
   service:
     name: "dsvpn-server"
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
 
 - name: restart dsvpn-client
   service:
     name: "dsvpn-client"
     state: restarted
-  when:
-    - ansible_virtualization_type != "docker"
