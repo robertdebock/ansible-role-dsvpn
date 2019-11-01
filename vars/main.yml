@@ -3,14 +3,13 @@
 _dsvpn_requirements:
   default:
     - kmod
+  Debian:
+    - kmod
+    - iproute2
+  RedHat:
+    - kmod
     - iproute
 
-dsvpn_requirements: "{{ _dsvpn_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_dsvpn_requirements[ansible_distribution] | default(_dsvpn_requirements['default'])) }}"
+dsvpn_requirements: "{{ _dsvpn_requirements[ansible_os_family] | default(_dsvpn_requirements['default'])) }}"
 
 dsvpn_release_url: "https://github.com/jedisct1/dsvpn/archive/{{ dsvpn_version }}.tar.gz"
-
-_dsvpn_validate_certs:
-  default: yes
-  Debian: no
-
-dsvpn_validate_certs: "{{ _dsvpn_validate_certs[ansible_os_family] | default(_dsvpn_validate_certs['default']) }}"

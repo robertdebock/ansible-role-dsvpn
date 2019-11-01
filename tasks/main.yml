@@ -13,7 +13,6 @@
     src: "{{ dsvpn_release_url }}"
     dest: "{{ dsvpn_temporary_directory }}"
     remote_src: yes
-    validate_certs: "{{ dsvpn_validate_certs }}"
   register: dsvpn_unarchive
   until: dsvpn_unarchive is succeeded
   retries: 3
