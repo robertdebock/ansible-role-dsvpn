@@ -13,6 +13,7 @@
     src: "{{ dsvpn_release_url }}"
     dest: "{{ dsvpn_temporary_directory }}"
     remote_src: yes
+    creates: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
   register: dsvpn_unarchive
   until: dsvpn_unarchive is succeeded
   retries: 3
