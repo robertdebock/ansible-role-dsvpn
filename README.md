@@ -33,9 +33,10 @@ The machine you are running this on, may need to be prepared.
   gather_facts: no
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.core_dependencies
-    - robertdebock.buildtools
+    - role: robertdebock.bootstrap
+    - role: robertdebock.ca_certificates
+    - role: robertdebock.core_dependencies
+    - role: robertdebock.buildtools
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -49,7 +50,7 @@ These variables are set in `defaults/main.yml`:
 # defaults file for dsvpn
 
 # The released version to download. See https://github.com/jedisct1/dsvpn/releases.
-dsvpn_version: 0.1.0
+dsvpn_version: 0.1.3
 
 # Where to download dsvpn to.
 dsvpn_temporary_directory: /tmp
@@ -79,6 +80,7 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.ca_certificates
 - robertdebock.core_dependencies
 - robertdebock.buildtools
 - robertdebock.service
@@ -114,8 +116,8 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 This role has been tested on these Ansible versions:
 
-- ansible~=2.7
 - ansible~=2.8
+- ansible~=2.9
 - git+https://github.com/ansible/ansible.git@devel
 
 The indicator '\~=' means [compatible with](https://www.python.org/dev/peps/pep-0440/#compatible-release). For example 'ansible\~=2.8' would pick the latest ansible-2.8, for example ansible-2.8.6.
