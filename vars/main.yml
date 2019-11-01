@@ -3,8 +3,7 @@
 _dsvpn_requirements:
   default:
     - kmod
-  CentOS-6:
-    - module-init-tools
+    - iproute
 
 dsvpn_requirements: "{{ _dsvpn_requirements[ansible_distribution ~ '-' ~ ansible_distribution_major_version] | default(_dsvpn_requirements[ansible_distribution] | default(_dsvpn_requirements['default'])) }}"
 
