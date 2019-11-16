@@ -38,6 +38,33 @@ The machine you are running this on, may need to be prepared.
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for dsvpn
+
+# The released version to download. See https://github.com/jedisct1/dsvpn/releases.
+dsvpn_version: 0.1.3
+
+# Where to download dsvpn to.
+dsvpn_temporary_directory: /tmp
+
+# Where to install dsvpn.
+dsvpn_install_directory: /usr/local/bin
+
+# Where to generate the keys. This is a sensitive file.
+dsvpn_key_directory: /tmp
+
+# The role to let dsvpn take, can be `client` or `server`.
+dsvpn_role: client
+
+# When the role `client` is selected, this is the address of the server
+# to connect to. Can be an address or a (resolvable) name.
+dsvpn_server: 127.0.0.1
+```
 
 Requirements
 ------------
