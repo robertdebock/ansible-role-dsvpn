@@ -29,7 +29,6 @@ jobs:
     strategy:
       matrix:
         image:
-          - archlinux
           - debian
           - centos
           - fedora
