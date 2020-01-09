@@ -14,16 +14,14 @@ env:
   global:
     namespace="robertdebock"
   matrix:
+    - image="debian" tag="latest"
     - image="debian" tag="unstable"
-    - image="debian"
-    - image="fedora"
+    - image="centos" tag="7"
+    - image="centos" tag="latest"
+    - image="fedora" tag="30"
+    - image="fedora" tag="latest"
     - image="fedora" tag="rawhide"
-    - image="ubuntu"
-
-matrix:
-  allow_failures:
-    - env: image="debian" tag="unstable"
-    - env: image="fedora" tag="rawhide"
+    - image="ubuntu" tag="latest"
 
 cache:
   - pip
