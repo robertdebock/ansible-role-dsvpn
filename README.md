@@ -107,7 +107,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|amazon|2018.03|
 |el|7, 8|
 |debian|buster, bullseye|
 |fedora|31, 32|

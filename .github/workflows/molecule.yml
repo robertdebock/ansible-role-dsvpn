@@ -33,8 +33,6 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - image: "amazonlinux"
-            tag: "1"
           - image: "centos"
             tag: "7"
           - image: "centos"
