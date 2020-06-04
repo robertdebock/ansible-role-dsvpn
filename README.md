@@ -2,9 +2,9 @@
 
 Install and configure dsvpn on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-dsvpn.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-dsvpn)|[![github](https://github.com/robertdebock/ansible-role-dsvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-dsvpn/actions)|[![quality](https://img.shields.io/ansible/quality/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![downloads](https://img.shields.io/ansible/role/d/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-dsvpn.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-dsvpn)|[![github](https://github.com/robertdebock/ansible-role-dsvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-dsvpn/actions)|[![quality](https://img.shields.io/ansible/quality/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![downloads](https://img.shields.io/ansible/role/d/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-dsvpn.svg)](https://github.com/robertdebock/ansible-role-dsvpn/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -87,9 +87,9 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.buildtools
 - robertdebock.ca_certificates
 - robertdebock.core_dependencies
-- robertdebock.buildtools
 - robertdebock.service
 
 ```
