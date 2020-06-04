@@ -1,6 +1,6 @@
 ---
 - robertdebock.bootstrap
+- robertdebock.buildtools
 - robertdebock.ca_certificates
 - robertdebock.core_dependencies
-- robertdebock.buildtools
 - robertdebock.service
