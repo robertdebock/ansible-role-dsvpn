@@ -27,7 +27,7 @@
     src: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}/dsvpn"
     dest: "{{ dsvpn_install_directory }}/dsvpn"
     remote_src: yes
-    mode: '0750'
+    mode: "750"
 
 - name: generate key
   command: dd if=/dev/urandom of={{ dsvpn_key_directory }}/vpn.key count=1 bs=32
@@ -38,14 +38,14 @@
 - name: set permissions on key
   file:
     path: "{{ dsvpn_key_directory }}/vpn.key"
-    mode: "0644"
+    mode: "644"
   delegate_to: localhost
 
 - name: copy key
   copy:
     src: "{{ dsvpn_key_directory }}/vpn.key"
     dest: "{{ dsvpn_key_directory }}/vpn.key"
-    mode: "0640"
+    mode: "640"
     owner: root
     group: root
   notify:
