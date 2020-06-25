@@ -1,5 +1,8 @@
 ---
 # tasks file for dsvpn
+- name: include assert.yml
+  include_tasks: assert.yml
+
 - name: install requirements
   package:
     name: "{{ dsvpn_requirements }}"
