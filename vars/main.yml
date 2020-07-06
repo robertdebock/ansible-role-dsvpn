@@ -1,5 +1,6 @@
 ---
 # vars file for dsvpn
+
 _dsvpn_requirements:
   default:
     - kmod
