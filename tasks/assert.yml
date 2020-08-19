@@ -4,24 +4,28 @@
     that:
       - dsvpn_version is defined
       - dsvpn_version | length > 0
+    quiet: yes
 
 - name: test if dsvpn_temporary_directory is set correctly
   assert:
     that:
       - dsvpn_temporary_directory is defined
       - dsvpn_temporary_directory | length > 0
+    quiet: yes
 
 - name: test if dsvpn_install_directory is set correctly
   assert:
     that:
       - dsvpn_install_directory is defined
       - dsvpn_install_directory | length > 0
+    quiet: yes
 
 - name: test if dsvpn_key_directory is set correctly
   assert:
     that:
       - dsvpn_key_directory is defined
       - dsvpn_key_directory | length > 0
+    quiet: yes
 
 - name: test if dsvpn_role is set correctly
   assert:
@@ -29,11 +33,13 @@
       - dsvpn_role is defined
       - dsvpn_role | length > 0
       - dsvpn_role in ["client", "server"]
+    quiet: yes
 
 - name: test if dsvpn_server is set correctly
   assert:
     that:
       - dsvpn_server is defined
       - dsvpn_server | length > 0
+    quiet: yes
   when:
     - dsvpn_role == "client"
