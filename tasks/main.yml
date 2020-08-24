@@ -14,6 +14,7 @@
     dest: "{{ dsvpn_temporary_directory }}"
     remote_src: yes
     creates: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
+    mode: "0755"
 
 - name: make
   make:
@@ -60,6 +61,7 @@
   file:
     path: /dev/net
     state: directory
+    mode: "0755"
 
 - name: create character device /dev/net/tun
   command: mknod /dev/net/tun c 10 200
