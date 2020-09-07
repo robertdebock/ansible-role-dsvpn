@@ -41,7 +41,7 @@ For verification `molecule/resources/verify.yml` run after the role has been app
 - name: Verify
   hosts: all
   become: yes
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
     - name: check if connection still works
@@ -107,7 +107,6 @@ This role has been tested on these [container images](https://hub.docker.com/u/r
 
 |container|tags|
 |---------|----|
-|amazon|2018.03|
 |el|7, 8|
 |debian|buster, bullseye|
 |fedora|31, 32|
