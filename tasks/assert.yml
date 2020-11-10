@@ -32,7 +32,7 @@
     that:
       - dsvpn_role is defined
       - dsvpn_role | length > 0
-      - dsvpn_role in ["client", "server"]
+      - dsvpn_role in [ "client", "server" ]
     quiet: yes
 
 - name: test if dsvpn_server is set correctly
