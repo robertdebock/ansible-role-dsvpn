@@ -1,4 +1,5 @@
 ---
+
 - name: test if dsvpn_version is set correctly
   assert:
     that:
