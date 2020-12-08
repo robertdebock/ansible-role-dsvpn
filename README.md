@@ -2,9 +2,9 @@
 
 Install and configure dsvpn on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-dsvpn.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-dsvpn)|[![github](https://github.com/robertdebock/ansible-role-dsvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-dsvpn/actions)|[![quality](https://img.shields.io/ansible/quality/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![downloads](https://img.shields.io/ansible/role/d/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-dsvpn.svg)](https://github.com/robertdebock/ansible-role-dsvpn/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-dsvpn.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-dsvpn)|[![github](https://github.com/robertdebock/ansible-role-dsvpn/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-dsvpn/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-dsvpn/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-dsvpn)|[![quality](https://img.shields.io/ansible/quality/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![downloads](https://img.shields.io/ansible/role/d/42441)](https://galaxy.ansible.com/robertdebock/dsvpn)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-dsvpn.svg)](https://github.com/robertdebock/ansible-role-dsvpn/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -143,10 +143,6 @@ image="debian" tag="stable" tox
 ## [License](#license)
 
 Apache-2.0
-
-## [Contributors](#contributors)
-
-I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
 
 
 ## [Author Information](#author-information)
