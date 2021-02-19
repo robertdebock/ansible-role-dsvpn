@@ -1,35 +1,35 @@
 ---
 
 - name: test if dsvpn_version is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_version is defined
       - dsvpn_version is string
     quiet: yes
 
 - name: test if dsvpn_temporary_directory is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_temporary_directory is defined
       - dsvpn_temporary_directory is string
     quiet: yes
 
 - name: test if dsvpn_install_directory is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_install_directory is defined
       - dsvpn_install_directory is string
     quiet: yes
 
 - name: test if dsvpn_key_directory is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_key_directory is defined
       - dsvpn_key_directory is string
     quiet: yes
 
 - name: test if dsvpn_role is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_role is defined
       - dsvpn_role is string
@@ -37,7 +37,7 @@
     quiet: yes
 
 - name: test if dsvpn_server is set correctly
-  assert:
+  ansible.builtin.assert:
     that:
       - dsvpn_server is defined
       - dsvpn_server is string

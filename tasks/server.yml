@@ -1,6 +1,6 @@
 ---
 - name: create server service
-  import_role:
+  ansible.builtin.import_role:
     name: robertdebock.service
   vars:
     service_list:
@@ -11,7 +11,7 @@
     - restart dsvpn-server
 
 - name: start dsvpn-server
-  service:
+  ansible.builtin.service:
     name: dsvpn-server
     state: started
     enabled: yes

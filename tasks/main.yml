@@ -7,12 +7,12 @@
   delegate_to: localhost
 
 - name: install requirements
-  package:
+  ansible.builtin.package:
     name: "{{ dsvpn_requirements }}"
     state: present
 
 - name: unarchive
-  unarchive:
+  ansible.builtin.unarchive:
     src: "{{ dsvpn_release_url }}"
     dest: "{{ dsvpn_temporary_directory }}"
     remote_src: yes
@@ -20,11 +20,11 @@
     mode: "0755"
 
 - name: make
-  make:
+  community.general.make:
     chdir: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}"
 
 - name: install
-  copy:
+  ansible.builtin.copy:
     src: "{{ dsvpn_temporary_directory }}/dsvpn-{{ dsvpn_version }}/dsvpn"
     dest: "{{ dsvpn_install_directory }}/dsvpn"
     remote_src: yes
@@ -37,13 +37,13 @@
   delegate_to: localhost
 
 - name: set permissions on key
-  file:
+  ansible.builtin.file:
     path: "{{ dsvpn_key_directory }}/vpn.key"
     mode: "644"
   delegate_to: localhost
 
 - name: copy key
-  copy:
+  ansible.builtin.copy:
     src: "{{ dsvpn_key_directory }}/vpn.key"
     dest: "{{ dsvpn_key_directory }}/vpn.key"
     mode: "640"
@@ -54,14 +54,14 @@
     - restart dsvpn-client
 
 - name: load tun module
-  modprobe:
+  community.genral.modprobe:
     name: tun
     state: present
   when:
     - ansible_connection != "docker"
 
 - name: create /dev/net directory
-  file:
+  ansible.builtin.file:
     path: /dev/net
     state: directory
     mode: "0755"
@@ -72,11 +72,11 @@
     creates: /dev/net/tun
 
 - name: create server
-  include_tasks: server.yml
+  ansible.builtin.include_tasks: server.yml
   when:
     - dsvpn_role == "server"
 
 - name: create client
-  include_tasks: client.yml
+  ansible.builtin.include_tasks: client.yml
   when:
     - dsvpn_role == "client"

@@ -2,7 +2,7 @@
 # handlers file for dsvpn
 
 - name: restart dsvpn-server
-  service:
+  ansible.builtin.service:
     name: "dsvpn-server"
     state: restarted
   when:
@@ -10,7 +10,7 @@
     - not ansible_check_mode | bool
 
 - name: restart dsvpn-client
-  service:
+  ansible.builtin.service:
     name: "dsvpn-client"
     state: restarted
   when:

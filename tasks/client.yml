@@ -1,6 +1,6 @@
 ---
 - name: create client service
-  import_role:
+  ansible.builtin.import_role:
     name: robertdebock.service
   vars:
     service_list:
@@ -11,7 +11,7 @@
     - restart dsvpn-client
 
 - name: start dsvpn-client
-  service:
+  ansible.builtin.service:
     name: dsvpn-client
     state: started
     enabled: yes
