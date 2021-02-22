@@ -67,7 +67,7 @@
     mode: "0755"
 
 - name: create character device /dev/net/tun
-  command: mknod /dev/net/tun c 10 200
+  ansible.builtin.command: mknod /dev/net/tun c 10 200
   args:
     creates: /dev/net/tun
 
