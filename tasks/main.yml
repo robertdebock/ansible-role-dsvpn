@@ -54,7 +54,7 @@
     - restart dsvpn-client
 
 - name: load tun module
-  community.genral.modprobe:
+  community.general.modprobe:
     name: tun
     state: present
   when:
