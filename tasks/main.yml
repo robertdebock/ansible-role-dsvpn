@@ -72,11 +72,13 @@
     creates: /dev/net/tun
 
 - name: create server
-  ansible.builtin.include_tasks: server.yml
+  ansible.builtin.include_tasks:
+    file: server.yml
   when:
     - dsvpn_role == "server"
 
 - name: create client
-  ansible.builtin.include_tasks: client.yml
+  ansible.builtin.include_tasks:
+    name: client.yml
   when:
     - dsvpn_role == "client"
