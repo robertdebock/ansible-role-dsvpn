@@ -7,10 +7,10 @@ _dsvpn_requirements:
   Debian:
     - kmod
     - iproute2
-  RedHat: &RHEL
+  RedHat: &redhat_requirements
     - kmod
     - iproute
-  Rocky: *RHEL
+  Rocky: *redhat_requirements
 
 dsvpn_requirements: "{{ _dsvpn_requirements[ansible_os_family] | default(_dsvpn_requirements['default']) }}"
 
