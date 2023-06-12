@@ -5,4 +5,4 @@
 repository:
   description: Install and configure dsvpn on your system.
   homepage: https://robertdebock.nl/
-  topics: dsvpn, ansible, molecule, tox, playbook
+  topics: dsvpn, networking, ansible, molecule, tox, playbook
