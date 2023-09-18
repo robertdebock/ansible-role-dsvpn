@@ -1,6 +1,6 @@
 # [dsvpn](#dsvpn)
 
-Install and configure dsvpn on your system.
+Install and configure DSVPN on your system.
 
 |GitHub|GitLab|Quality|Downloads|Version|
 |------|------|-------|---------|-------|

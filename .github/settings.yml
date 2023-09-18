@@ -3,6 +3,6 @@
 # Ansible managed
 #
 repository:
-  description: Install and configure dsvpn on your system.
+  description: Install and configure DSVPN on your system.
   homepage: https://robertdebock.nl/
   topics: dsvpn, networking, ansible, molecule, tox, playbook
