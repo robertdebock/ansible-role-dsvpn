@@ -1,4 +1,4 @@
-# Ansible role [dsvpn](#dsvpn)
+# [Ansible role dsvpn](#dsvpn)
 
 Install and configure DSVPN on your system.
 
