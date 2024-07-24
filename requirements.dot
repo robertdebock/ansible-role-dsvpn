@@ -1,0 +1,17 @@
+digraph PhiloDilemma {
+  label = "Robert de Bock" ;
+  overlap=false
+  {
+    "dsvpn" [fillcolor=yellow style=filled penwidth=3]
+    "robertdebock.bootstrap" [fillcolor=green style=filled]
+    "robertdebock.buildtools" [fillcolor=green style=filled]
+    "robertdebock.ca_certificates" [fillcolor=green style=filled]
+    "robertdebock.core_dependencies" [fillcolor=green style=filled]
+    "robertdebock.service" [fillcolor=green style=filled]
+  }
+  "dsvpn" -> "robertdebock.bootstrap"
+  "dsvpn" -> "robertdebock.buildtools"
+  "dsvpn" -> "robertdebock.ca_certificates"
+  "dsvpn" -> "robertdebock.core_dependencies"
+  "dsvpn" -> "robertdebock.service"
+}
